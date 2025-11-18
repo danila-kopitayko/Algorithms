@@ -16,9 +16,9 @@ def is_symmetric(root):
         for i in range(queue_len):
             if queue[i] is None and queue[queue_len - i - 1] is None:
                 continue
-            if queue[i] != queue[queue_len - i - 1]:
+            if queue[i] is None or queue[queue_len - i - 1] is None:
                 return False
-            if (queue[i] is None and queue[queue_len - i - 1]) or (queue[i] and queue[queue_len - i - 1] is None):
+            if queue[i].data != queue[queue_len - i - 1].data:
                 return False
             queue.append(queue[i].left)
             queue.append(queue[i].right)
@@ -30,7 +30,7 @@ def is_symmetric(root):
 def search(root,res):
     if root is None:
         return res
-    search(root.left)
+    search(root.left,res)
     res.append(root.data)
     search(root.right,res)
     return res
@@ -40,7 +40,7 @@ def dfs_is_symmetric(root):
         return True
     data = []
     data = search(root,data)
-    for i in range(len(data/2)):
+    for i in range(len(data)//2):
         if data[i]!=data[len(data)-i-1]:
             return False
     return True
