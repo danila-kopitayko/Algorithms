@@ -3,6 +3,8 @@ class Node:
         self.data = val
         self.left = left
         self.right = right
+    def __mul__(self1,self2):
+        return self1.data * self2.data
 
 def array_to_tree(data):
     nodes = []

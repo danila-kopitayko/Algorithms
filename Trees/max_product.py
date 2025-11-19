@@ -1,8 +1,4 @@
-class Node:
-    def __init__(self,data,left=None,right=None):
-        self.data = data
-        self.left = left
-        self.right = right
+from Tree import array_to_tree, Node
 
 
 def solution(data):
@@ -28,7 +24,40 @@ def solution(data):
         break
     return data[max_idx] * data[min_idx]
 
+def find_min(root):
+    if root.left is None:
+        return root.data
+    while root.left:
+        print(root.data)
+        root = root.left
+    return root
+
+def find_max(root):
+    if root.right is None:
+        return root.data
+    while root.right:
+        #print(root.data)
+        root = root.right
+    return root
+
+def alternative_solution(root):
+    min_ = find_min(root)
+    max_ = find_max(root)
+    return min_.data*max_.data
+
 def main():
+
+    arr = [8, 9, 11, 7, 16, 3, 1]
+
+    t = array_to_tree(arr)
+    #print('test',t[3].data)
+    print('min:',find_min(t[0]).data)
+
+    print('max:',find_max(t[0]).data)
+
+    print('solution',solution(arr))
+    print('alternative solution', alternative_solution(t[0]))
+
     return 0
 
 

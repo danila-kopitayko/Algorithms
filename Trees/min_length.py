@@ -1,8 +1,4 @@
-class Node:
-    def __init__(self,data,left=None,right=None):
-        self.data = data
-        self.left = left
-        self.right = right
+from Tree import array_to_tree
 
 def solution(root):
     if root is None:
@@ -16,8 +12,14 @@ def solution(root):
     if root.right:
         return 1 + solution(root.right)
 #попробовать через поиск в ширину
+
 def main():
+
     arr = [8, 9, 11, 7, 16, 3, 1]
+
+    t = array_to_tree(arr)
+
+    print(solution(t[0]))
     return 0
 
 main()

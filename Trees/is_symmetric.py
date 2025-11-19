@@ -1,10 +1,5 @@
-from Tree import array_to_tree, Node
+from Tree import array_to_tree
 
-'''class Node:
-    def __init__(self,data,left=None,right=None):
-        self.data = data
-        self.left = left
-        self.right = right'''
 
 def is_symmetric(root):
     if root is None:
@@ -46,7 +41,7 @@ def dfs_is_symmetric(root):
     return True
 
 def main():
-    arr = [1,2,2,3,4,4,3]
+    arr = [3,8,8,6,9,9,6]
 
     t = array_to_tree(arr)
 
