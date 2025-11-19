@@ -11,11 +11,12 @@ def solution(root):
         return 1 + solution(root.left)
     if root.right:
         return 1 + solution(root.right)
+    
 #попробовать через поиск в ширину
 
 def main():
 
-    arr = [8, 9, 11, 7, 16, 3, 1]
+    arr = [11,12,13,14,16,17,18]
 
     t = array_to_tree(arr)
 

@@ -7,28 +7,20 @@ def solution(data):
     min_idx = 1
     max_idx = 2
     i = 0
-    while True:
-        min_idx_buff = 2 * i + 1
-        if min_idx_buff < len(data):
-            min_idx = min_idx_buff
-            i = min_idx_buff
-            continue
-        break
-
-    while True:
-        max_idx_buff = 2 * i + 2
-        if min_idx_buff < len(data):
-            max_idx = max_idx_buff
-            i = max_idx_buff
-            continue
-        break
+    while 2 * min_idx + 1 < len(data):
+        print(f'min_idx={min_idx}')
+        min_idx = 2 * min_idx + 1
+    while 2 * max_idx + 1 < len(data):
+        print(f'max idx:{max_idx}')
+        max_idx = 2 * max_idx
+    print(data[max_idx], data[min_idx])
     return data[max_idx] * data[min_idx]
 
 def find_min(root):
     if root.left is None:
         return root.data
     while root.left:
-        print(root.data)
+        #print(root.data)
         root = root.left
     return root
 
@@ -47,7 +39,9 @@ def alternative_solution(root):
 
 def main():
 
-    arr = [8, 9, 11, 7, 16, 3, 1]
+    arr = [16, 9, 18, 7, 11, 17, 19]
+    sorted_arr = sorted(arr)
+    print(sorted_arr)
 
     t = array_to_tree(arr)
     #print('test',t[3].data)
