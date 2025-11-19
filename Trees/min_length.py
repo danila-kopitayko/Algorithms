@@ -12,7 +12,6 @@ def solution(root):
     if root.right:
         return 1 + solution(root.right)
     
-#попробовать через поиск в ширину
 
 def main():
 

@@ -8,12 +8,12 @@ def solution(data):
     max_idx = 2
     i = 0
     while 2 * min_idx + 1 < len(data):
-        print(f'min_idx={min_idx}')
+        #print(f'min_idx={min_idx}\t len(data)={len(data)}')
         min_idx = 2 * min_idx + 1
-    while 2 * max_idx + 1 < len(data):
-        print(f'max idx:{max_idx}')
-        max_idx = 2 * max_idx
-    print(data[max_idx], data[min_idx])
+    while 2 * max_idx + 2 < len(data):
+        #print(f'max idx:{max_idx}')
+        max_idx = 2 * max_idx + 2
+    #print(data[max_idx], data[min_idx])
     return data[max_idx] * data[min_idx]
 
 def find_min(root):
@@ -39,15 +39,9 @@ def alternative_solution(root):
 
 def main():
 
-    arr = [16, 9, 18, 7, 11, 17, 19]
-    sorted_arr = sorted(arr)
-    print(sorted_arr)
+    arr = [6, 3, 8, 1, 4, 7, 9]
 
     t = array_to_tree(arr)
-    #print('test',t[3].data)
-    print('min:',find_min(t[0]).data)
-
-    print('max:',find_max(t[0]).data)
 
     print('solution',solution(arr))
     print('alternative solution', alternative_solution(t[0]))
