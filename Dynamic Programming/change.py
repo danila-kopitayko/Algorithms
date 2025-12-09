@@ -14,12 +14,10 @@ def test(coin, amount,mem=None):
     minn = max_int
     for c in coin:
         res = test(coin, amount - c,mem)
-        #print('res',res)
+
         if 0 <= res < minn:
             minn = res + 1
-    #print(minn)
     mem[amount] = -1 if minn==max_int else minn
-    #print(mem[amount],minn)
     return mem[amount]
 
 def solution(coin, amount):
