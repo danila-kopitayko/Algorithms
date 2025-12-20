@@ -5,6 +5,10 @@ def solution(arr):
     index_map[0] = -1
 
     for i in range(len(arr)):
+        if arr[i]==0:
+            arr[i] = -1
+
+    for i in range(len(arr)):
         num = arr[i]
         prefix_sum = prefix_sum + 1 if num==1 else prefix_sum - 1
 
@@ -18,7 +22,7 @@ def solution(arr):
 
 
 def main():
-    arr=[-1,1,-1]
+    arr=[0,1,0]
 
     print(solution(arr))
 
