@@ -17,7 +17,6 @@ def solution(s,k):
 
 def main():
     s = ')()'
-    print(test(s,1))
     print(solution(s,1))
     return 0
 
