@@ -35,7 +35,7 @@ def solution(arr,k):
 def main():
     n = 10
     arr = [random.randint(0,10) for i in range(n)]
-    #arr = [6, 5, 5, 0, 8, 1, 0, 6, 3, 6]
+
     print(arr)
     print(solution(arr,5))
     print(test(arr,5))
